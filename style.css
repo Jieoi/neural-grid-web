@@ -120,10 +120,35 @@ aside ul {
   list-style: none;
   margin-bottom: var(--gap);
 }
-aside ul li {
-  margin-bottom: 4px;
+
+aside ul + h3 {
+  /* move this H3 down by double your normal gap */
+  margin-top: calc(var(--gap) * 2);
 }
 
+aside ul li {
+  margin-bottom: 4px;  
+  border-bottom: 1px solid #e0e0e0;   /* thin grey line */
+  padding-bottom: 8px;                /* space above the line */
+}
+
+aside ul li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Sidebar “wave” hover effect */
+aside ul li {
+  /* smooth animation of transform */
+  transition: transform 0.2s ease;
+  transform-origin: left center;
+}
+
+aside ul li:hover {
+  /* slightly enlarge on hover */
+  transform: scale(1.1);
+}
 /* ---- Main ---- */
 main {
   grid-area: main;
@@ -159,6 +184,18 @@ footer {
   padding: 8px;
   text-align: center;
   font-weight: bold;
+}
+
+/* ---- Card click shadow effect ---- */
+.card, .cat-card, .offer-card {
+  transition: box-shadow 0.2s ease;
+}
+
+/* when clicked, darker + larger grey shadow */
+.card.selected,
+.cat-card.selected,
+.offer-card.selected {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* ---- Search & Filter ---- */

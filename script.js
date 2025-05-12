@@ -1,7 +1,7 @@
 (function() {
   // Sidebar toggle
   const menuToggle = document.getElementById('menu-toggle');
-  const page = document.querySelector('.page');
+  const page       = document.querySelector('.page');
   menuToggle.addEventListener('click', () => {
     page.classList.toggle('collapsed');
   });
@@ -13,14 +13,22 @@
   const sliderBar = document.getElementById('sliderBar');
 
   window.addEventListener('load', () => {
+    // initialize slider
     const maxScroll = slides.scrollWidth - slides.clientWidth;
     sliderBar.max = maxScroll;
     updateSliderBackground();
+
+    // wire up card click → “selected” toggle
+    document.querySelectorAll('.card, .cat-card, .offer-card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('selected');
+      });
+    });
   });
 
   function scrollByCard(dir) {
     const card = slides.querySelector('.offer-card');
-    const gap = parseInt(getComputedStyle(slides).gap, 10);
+    const gap  = parseInt(getComputedStyle(slides).gap, 10);
     const step = card.getBoundingClientRect().width + gap;
     slides.scrollBy({ left: dir * step, behavior: 'smooth' });
   }
