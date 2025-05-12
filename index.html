@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Agent Marketplace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+      <div class="logo">
+        <img src="image/logo1.jpg" alt="Logo">
+        <span>Neural Grid</span>
+      </div>
+      <nav>COMMUNITY & SUPPORT | ABOUT US</nav>
+      <div class="controls">
+        <select>
+          <option>English</option>
+          <option>中文</option>
+          <option>Español</option>
+        </select>
+        <img class="user" src="image/img4.jpg" alt="User">
+      </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside>
+      <h3>RECOMMENDED JUST FOR YOU</h3>
+      <ul><li>Select tags and find your AI Agent!</li></ul>
+      <h3>⚡ QUICK PICK</h3>
+      <ul>
+        <li>Top Sellers</li>
+        <li>New & Trending</li>
+        <li>Special Offers</li>
+        <li>Try Free</li>
+      </ul>
+      <h3>📂 BROWSE BY CATEGORY</h3>
+      <ul>
+        <li>Writing</li>
+        <li>Image & Video</li>
+        <li>Math</li>
+        <li>Programming</li>
+        <li>Business & Finance</li>
+        <li>Daily Assistant</li>
+        <li>Education & Learning</li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <div class="search-filter">
+        <input type="text" placeholder="🔍 Search for AI agent">
+        <select>
+          <option>All token usage</option>
+          <option>< 10 tokens</option>
+          <option>< 50 tokens</option>
+          <option>< 100 tokens</option>
+        </select>
+      </div>
+
+      <div class="section-block">
+        <div class="section-header"><h2>🔥 Top 5 Recommend</h2></div>
+        <div class="top5">
+          <div class="card"><img src="image/img1.jpg" alt=""><p>MAS Tool #1</p></div>
+          <div class="card"><img src="image/img2.jpg" alt=""><p>MAS Tool #2</p></div>
+          <div class="card"><img src="image/img3.jpg" alt=""><p>MAS Tool #3</p></div>
+          <div class="card"><img src="image/img4.jpg" alt=""><p>MAS Tool #4</p></div>
+          <div class="card"><img src="image/img5.jpg" alt=""><p>MAS Tool #5</p></div>
+        </div>
+      </div>
+
+      <section class="offers">
+        <div class="offers-header">
+          <h2>🎁 Special Offers</h2>
+          <button class="arrow left">◀</button>
+          <button class="arrow right">▶</button>
+        </div>
+        <div class="offers-slider">
+          <div class="slides" id="slides">
+            <div class="offer-card"><img src="image/special1.jpg" alt=""><p>Special 1</p></div>
+            <div class="offer-card"><img src="image/special2.jpg" alt=""><p>Special 2</p></div>
+            <div class="offer-card"><img src="image/special3.jpg" alt=""><p>Special 3</p></div>
+            <div class="offer-card"><img src="image/special4.jpg" alt=""><p>Special 4</p></div>
+            <div class="offer-card"><img src="image/special5.jpg" alt=""><p>Special 5</p></div>
+          </div>
+        </div>
+        <input type="range" id="sliderBar" class="slider-bar" value="0">
+      </section>
+
+      <div class="section-block">
+        <div class="section-header"><h2>📚 Browse by Category</h2></div>
+        <div class="categories">
+          <div class="cat-card"><img src="image/category1.jpg" alt=""><p>Writing</p></div>
+          <div class="cat-card"><img src="image/category2.jpg" alt=""><p>Image & Video</p></div>
+          <div class="cat-card"><img src="image/category3.jpg" alt=""><p>Math</p></div>
+          <div class="cat-card"><img src="image/category4.jpg" alt=""><p>Programming</p></div>
+          <div class="cat-card"><img src="image/category5.jpg" alt=""><p>Business & Finance</p></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer></footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
