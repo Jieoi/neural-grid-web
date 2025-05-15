@@ -230,6 +230,29 @@ footer {
   margin: 0;
   font-size: 1.1rem;
 }
+/* ────────────────────────────────────────
+   Card metadata: tokens / stars / uses
+──────────────────────────────────────── */
+
+.card-meta {
+  display: flex;
+  justify-content: center; /* or space-around */
+  gap: 1rem;
+  padding-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.card-meta .meta-item {
+  display: flex;
+  align-items: center;
+}
+
+.card-meta .meta-item::before {
+  /* optional: add a little left-padding so text never touches the emoji/icon */
+  margin-right: 0.25rem;
+}
+
 
 /* ---- Special Offers ---- */
 .offers {
@@ -288,4 +311,16 @@ footer {
 .top5, .categories {
   display: flex;
   gap: var(--gap);
+}
+
+
+/*mas_tool*/
+/* give extra space between paragraphs in the tool detail view */
+.tool-detail p {
+  margin-bottom: 1.5rem;
+}
+.tool-detail ul {
+  list-style-position: outside;
+  padding-left: 1rem;    /* reduce from 1.25rem to 1rem (tweak to taste) */
+  margin-bottom: 1.5rem;
 }
