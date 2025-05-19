@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Agent Marketplace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+      <div class="logo">
+        <img src="image/logo3.JPG" alt="Logo">
+        <img src="image/logo4.JPG" alt="Logo">
+      </div>
+      <nav>COMMUNITY & SUPPORT | ABOUT US</nav>
+      <div class="controls">
+        <select>
+          <option>English</option>
+          <option>中文</option>
+          <option>Español</option>
+        </select>
+        <img class="user" src="image/img4.jpg" alt="User">
+      </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside>
+      <h3>Recently Used 📑</h3>
+      <ul>
+        <li><a href="mas_tool.html" style="color: black; text-decoration: none;">Korean Master</a></li>
+        <li><a href="mas_tool.html" style="color: black; text-decoration: none;">Writing Assistant</a></li>
+        <li><a href="mas_tool.html" style="color: black; text-decoration: none;">Gauth Tutor</a></li>
+      </ul>
+
+      <h3>RECOMMENDED JUST FOR YOU 🎯</h3>
+      <ul>
+        <li>Select tags and find your AI Agent!</li>
+      </ul>
+
+      <h3>QUICK PICK ⚡</h3>
+      <ul>
+        <li>Top Sellers</li>
+        <li>New & Trending</li>
+        <li>Special Offers</li>
+        <li>Try Free</li>
+      </ul>
+
+      <h3>BROWSE BY CATEGORY 📂</h3>
+      <ul>
+        <li>Writing</li>
+        <li>Image & Video</li>
+        <li>Math</li>
+        <li>Programming</li>
+        <li>Business & Finance</li>
+        <li>Daily Assistant</li>
+        <li>Education & Learning</li>
+      </ul>
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <div class="search-filter">
+        <input type="text" placeholder="🔍 Search for AI agent">
+        <select>
+          <option>All token usage</option>
+          <option>< 10 tokens</option>
+          <option>< 50 tokens</option>
+          <option>< 100 tokens</option>
+        </select>
+
+
+
+        <select>
+          <option>All categories</option>
+          <option>Writing</option>
+          <option>Image & Video</option>
+          <option>Math</option>
+          <option>Programming</option>
+          <option>Business & Finance</option>
+          </select> 
+        
+        <select>
+          <option>All ratings</option>
+          <option>⭐ 4.0+</option>
+          <option>⭐ 4.5+</option>
+          <option>⭐ 5.0</option>
+        </select>
+
+      </div>
+
+      <div class="section-block">
+        <div class="section-header"><h2>🔥 Top 5 Recommend</h2></div>
+        <div class="top5">
+          <!-- each .card is an <a class="card"> for easy linking -->
+          <a class="card" href="mas_tool.html" style="color: black; text-decoration: none;">
+            <img src="image/img1.jpg" alt="Korean Master">
+            <p>Korean Master</p>
+                <!-- new meta row -->
+            <div class="card-meta">
+              <span class="meta-item">🪙 50 tok</span>
+              <span class="meta-item">⭐ 4.7</span>
+              <span class="meta-item">👥 740.7 K</span>
+            </div>
+          </a>
+          <a class="card" href="mas_tool.html" style="color: black; text-decoration: none;">
+            <img src="image/img2.jpg" alt="Writing Assistant">
+            <p>Writing Assistant</p>
+            <div class="card-meta">
+              <span class="meta-item">🪙 75 tok</span>
+              <span class="meta-item">⭐ 4.5</span>
+              <span class="meta-item">👥 723.7 K</span>
+            </div>
+          </a>
+          <a class="card" href="mas_tool.html" style="color: black; text-decoration: none;">
+            <img src="image/img3.jpg" alt="Gauth Tutor">
+            <p>Gauth Tutor</p>
+            <div class="card-meta">
+              <span class="meta-item">🪙 25 tok</span>
+              <span class="meta-item">⭐ 4.3</span>
+              <span class="meta-item">👥 669.7 K</span>
+            </div>
+          </a>
+          <a class="card" href="mas_tool.html" style="color: black; text-decoration: none;">
+            <img src="image/img4.jpg" alt="Chat With All Models V2.2">
+            <p>Chat With All Models V2.2</p>
+            <div class="card-meta">
+              <span class="meta-item">🪙 30 tok</span>
+              <span class="meta-item">⭐ 4.2</span>
+              <span class="meta-item">👥 574.7 K</span>
+            </div>
+          </a>
+          <a class="card" href="mas_tool.html" style="color: black; text-decoration: none;">
+            <img src="image/img5.jpg" alt="BOT RENOT">
+            <p>BOT RENOT</p>
+            <div class="card-meta">
+              <span class="meta-item">🪙 35 tok</span>
+              <span class="meta-item">⭐ 3.7</span>
+              <span class="meta-item">👥 369.7 K</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <section class="offers">
+        <div class="offers-header">
+          <h2>🎁 Special Offers</h2>
+          <button class="arrow left">◀</button>
+          <button class="arrow right">▶</button>
+        </div>
+        <div class="offers-slider">
+          <div class="slides" id="slides">
+            <div class="offer-card"><img src="image/special1.jpg" alt=""><p>Best Trip Buddy</p></div>
+            <div class="offer-card"><img src="image/special2.jpg" alt=""><p>Learn Coding Together</p></div>
+            <div class="offer-card"><img src="image/special3.jpg" alt=""><p>Storyteller</p></div>
+            <div class="offer-card"><img src="image/special4.jpg" alt=""><p>Shot Movies </p></div>
+            <div class="offer-card"><img src="image/special5.jpg" alt=""><p>Finance Expert</p></div>
+          </div>
+        </div>
+        <input type="range" id="sliderBar" class="slider-bar" value="0">
+      </section>
+
+
+      <div class="section-block">
+        <div class="section-header"><h2>📚 Browse by Category</h2></div>
+        <div class="categories">
+          <div class="cat-card"><img src="image/category1.jpg" alt=""><p>Writing</p></div>
+          <div class="cat-card"><img src="image/category2.jpg" alt=""><p>Image & Video</p></div>
+          <div class="cat-card"><img src="image/category3.jpg" alt=""><p>Math</p></div>
+          <div class="cat-card"><img src="image/category4.jpg" alt=""><p>Programming</p></div>
+          <div class="cat-card"><img src="image/category5.jpg" alt=""><p>Business & Finance</p></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer></footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

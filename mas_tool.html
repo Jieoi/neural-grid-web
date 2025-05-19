@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Korean Master – Detail</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER (identical to index.html) -->
+    <header>
+      <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+      <div class="logo">
+        <img src="image/logo3.JPG" alt="Logo">
+        <img src="image/logo4.JPG" alt="Logo">
+      </div>
+      <nav>COMMUNITY & SUPPORT | ABOUT US</nav>
+      <div class="controls">
+        <select>
+          <option>English</option>
+          <option>中文</option>
+          <option>Español</option>
+        </select>
+        <img class="user" src="image/img4.jpg" alt="User">
+      </div>
+    </header>
+
+    <!-- SIDEBAR (identical to index.html) -->
+    <aside>
+      <h3>Recently Used 📑</h3>
+      <ul>
+        <li><a href="mas_tool.html" style="color: black; text-decoration: none;">Korean Master</a></li>
+        <li><a href="mas_tool.html" style="color: black; text-decoration: none;">Writing Assistant</a></li>
+        <li><a href="mas_tool.html" style="color: black; text-decoration: none;">Gauth Tutor</a></li>
+      </ul>
+
+      <h3>RECOMMENDED JUST FOR YOU 🎯</h3>
+      <ul>
+        <li>Select tags and find your AI Agent!</li>
+      </ul>
+
+      <h3>QUICK PICK ⚡</h3>
+      <ul>
+        <li>Top Sellers</li>
+        <li>New & Trending</li>
+        <li>Special Offers</li>
+        <li>Try Free</li>
+      </ul>
+
+      <h3>BROWSE BY CATEGORY 📂</h3>
+      <ul>
+        <li>Writing</li>
+        <li>Image & Video</li>
+        <li>Math</li>
+        <li>Programming</li>
+        <li>Business & Finance</li>
+        <li>Daily Assistant</li>
+        <li>Education & Learning</li>
+      </ul>
+    </aside>
+
+
+    <!-- MAIN CONTENT FOR THE MAS TOOL DETAIL -->
+    <main>
+        <section class="section-block">
+          <div class="section-header">
+            <h2>Korean Master</h2>
+          </div>
+
+          <div
+            class="tool-detail"
+            style="display: flex; gap: 24px; align-items: flex-start; padding: 16px;"
+          >
+            <!-- Left: 50% width, true 16:9 -->
+            <div
+              class="video-container"
+              style="
+                flex: 0 0 50%;
+                width: 50%;
+                aspect-ratio: 16 / 9;
+                position: relative;
+                overflow: hidden;
+              "
+            >
+              <iframe
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                style="
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  border: 0;
+                "
+              ></iframe>
+            </div>
+
+            <!-- Right: fills remaining ~50% -->
+            <div class="info-container" style="flex: 1;">
+              <h3>Description</h3>
+              <p>
+                Korean Master is an interactive multi-agent language tutor that guides you
+                through Korean vocabulary, grammar drills and conversational practice.
+                It adapts difficulty based on your performance and provides real-time corrections.
+              </p>
+
+              <h3>Model</h3>
+              <p>
+                Built on a fine-tuned GPT-3.5 architecture with a custom dialog tree.
+                Supports both text and audio prompts, with on-the-fly speech-to-text integration.
+              </p>
+
+              <h3>Quick Start (README)</h3>
+              <ul>
+                <li>1. Click “Start Lesson” to launch the first interactive module.</li>
+                <li>2. Use commands like <code>/translate 안녕하세요</code> for instant translations.</li>
+                <li>3. Track progress in your dashboard and review flashcards.</li>
+              </ul>
+
+<p style="margin-top: 16px; display: flex; gap: 8px;">
+  <button
+    onclick="location.href='index.html'"
+    style="
+      padding: 8px 16px;
+      border: none;
+      background: var(--accent-color);
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    "
+  >
+    ← Back to Marketplace
+  </button>
+
+  <button
+    onclick="location.href='bot.html'"
+    style="
+      padding: 8px 16px;
+      border: none;
+      background: #28a745;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    "
+  >
+    Try me
+  </button>
+</p>
+
+            </div>
+          </div>
+        </section>
+
+
+    </main>
+
+    <!-- FOOTER (identical to index.html) -->
+    <footer></footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

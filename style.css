@@ -1,0 +1,333 @@
+/* ---- Reset & Variables ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --header-height: 60px;
+  --footer-height: 40px;
+  --sidebar-width: 220px;
+  --gap: 16px;
+
+  /* Light-purple theme */
+  --bg-header: #ffffff;
+  --bg-footer: #ffffff;
+  --bg-sidebar: #f9f9fc;
+  --text-light: #ffffff;
+  --text-dark: #333333;
+  --accent-color: #7A6FF5;
+  --card-radius: 12px;
+  --card-shadow: rgba(0, 0, 0, 0.05);
+  --cards-visible: 5;
+  --font: Arial, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font);
+  background: #f5f5f5;
+  color: var(--text-dark);
+}
+
+/* ---- Grid Layout ---- */
+.page {
+  display: grid;
+  grid-template-rows: var(--header-height) 1fr var(--footer-height);
+  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  gap: var(--gap);
+  height: 100vh;
+}
+
+.page.collapsed {
+  grid-template-columns: 0 1fr;
+}
+.page.collapsed aside {
+  display: none;
+}
+
+/* ---- Header ---- */
+header {
+  grid-area: header;
+  display: flex;
+  align-items: center;        /* vertical centering */
+  padding: 0 var(--gap);
+  background: var(--bg-header);
+}
+
+/* Order each element */
+header #menu-toggle { order: 0; }
+header .logo       { order: 1; }
+header nav         { order: 2; }
+header .controls   { order: 3; }
+
+/* Hamburger */
+header #menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Logo block */
+header .logo {
+  display: flex;
+  align-items: center;
+  margin-left: var(--gap);
+}
+header .logo img {
+  height: 40px;
+  margin-right: 8px;
+}
+
+/* Nav expands to fill space */
+header nav {
+  order: 2;
+  margin-left:auto;
+  font-size: 1rem;
+}
+
+/* Controls: language selector + avatar */
+header .controls {
+  order: 3;
+  display:flex;
+  align-items: center;
+  gap:var(--gap);
+  margin-left:var(--gap);
+}
+header select,
+header img.user {
+  height: 32px;
+  border-radius: 4px;
+}
+
+
+/* ---- Sidebar ---- */
+aside {
+  grid-area: sidebar;
+  background: var(--bg-sidebar);
+  padding: var(--gap);
+  overflow-y: auto;
+  box-shadow: 1px 0 4px rgba(0,0,0,0.05);
+}
+aside h3 {
+  margin-bottom: calc(var(--gap)/2);
+}
+aside ul {
+  list-style: none;
+  margin-bottom: var(--gap);
+}
+
+aside ul + h3 {
+  /* move this H3 down by double your normal gap */
+  margin-top: calc(var(--gap) * 2);
+}
+
+aside ul li {
+  margin-bottom: 4px;  
+  border-bottom: 1px solid #e0e0e0;   /* thin grey line */
+  padding-bottom: 8px;                /* space above the line */
+}
+
+aside ul li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Sidebar “wave” hover effect */
+aside ul li {
+  /* smooth animation of transform */
+  transition: transform 0.2s ease;
+  transform-origin: left center;
+}
+
+aside ul li:hover {
+  /* slightly enlarge on hover */
+  transform: scale(1.1);
+}
+/* ---- Main ---- */
+main {
+  grid-area: main;
+  padding: var(--gap);
+  overflow-y: auto;
+  background: #ffffff;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.03);
+}
+
+/* ---- Footer ---- */
+footer {
+  grid-area: footer;
+  background: var(--bg-footer);
+  box-shadow: 0 -1px 4px rgba(0,0,0,0.05);
+}
+
+/* ---- Cards ---- */
+.card, .cat-card, .offer-card {
+  background: #ffffff;
+  border-radius: var(--card-radius);
+  box-shadow: 0 2px 6px var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 calc((100% - (var(--cards-visible) - 1) * var(--gap)) / var(--cards-visible));
+  overflow: hidden;
+}
+.card img, .cat-card img, .offer-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+.card p, .cat-card p, .offer-card p {
+  padding: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* ---- Card click shadow effect ---- */
+.card, .cat-card, .offer-card {
+  transition: box-shadow 0.2s ease;
+}
+
+/* when clicked, darker + larger grey shadow */
+.card.selected,
+.cat-card.selected,
+.offer-card.selected {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ---- Search & Filter ---- */
+.search-filter {
+  display: flex;
+  gap: var(--gap);
+  margin-bottom: var(--gap);
+}
+.search-filter input,
+.search-filter select {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* ---- Sections ---- */
+.section-block {
+  margin-top: var(--gap);
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  background: var(--accent-color);
+  color: var(--text-light);
+  padding: 8px var(--gap);
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
+  margin-bottom: var(--gap);
+}
+.section-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+/* ────────────────────────────────────────
+   Card metadata: tokens / stars / uses
+──────────────────────────────────────── */
+
+.card-meta {
+  display: flex;
+  justify-content: center; /* or space-around */
+  gap: 1rem;
+  padding-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.card-meta .meta-item {
+  display: flex;
+  align-items: center;
+}
+
+.card-meta .meta-item::before {
+  /* optional: add a little left-padding so text never touches the emoji/icon */
+  margin-right: 0.25rem;
+}
+
+
+/* ---- Special Offers ---- */
+.offers {
+  margin-top: var(--gap);
+  --cards-visible: 3;
+}
+.offers-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--accent-color);
+  color: var(--text-light);
+  padding: 8px var(--gap);
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
+}
+
+.offers-header h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* .offers-header button {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.2rem;
+  cursor: pointer;
+} */
+.offers-slider { position: relative; }
+.slides {
+  display: flex;
+  gap: var(--gap);
+  padding: var(--gap) 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.slides::-webkit-scrollbar { display: none; }
+
+/* ---- Slider Bar ---- */
+.slider-bar {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  margin: var(--gap) 0 0;
+  outline: none;
+}
+.slider-bar::-webkit-slider-thumb,
+.slider-bar::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+.slider-bar::-moz-range-track { background: transparent; }
+
+/* ---- Top5 & Categories ---- */
+.top5, .categories {
+  display: flex;
+  gap: var(--gap);
+}
+
+
+/*mas_tool*/
+/* give extra space between paragraphs in the tool detail view */
+.tool-detail p {
+  margin-bottom: 1.5rem;
+}
+.tool-detail ul {
+  list-style-position: outside;
+  padding-left: 1rem;    /* reduce from 1.25rem to 1rem (tweak to taste) */
+  margin-bottom: 1.5rem;
+}
