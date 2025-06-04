@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Korean Master – Detail</title>
+  <title>Stock Analysis Assistant - Detail</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,8 +12,12 @@
     <header>
       <button id="menu-toggle" aria-label="Toggle menu">☰</button>
       <div class="logo">
-        <img src="image/logo3.JPG" alt="Logo">
-        <img src="image/logo4.JPG" alt="Logo">
+        <a href="index.html">
+          <img src="image/logo3.JPG" alt="Logo">
+        </a>
+        <a href="index.html">
+          <img src="image/logo4.JPG" alt="Logo">
+        </a>
       </div>
       <nav>COMMUNITY & SUPPORT | ABOUT US</nav>
       <div class="controls">
@@ -30,7 +34,7 @@
     <aside>
       <h3>Recently Used 📑</h3>
       <ul>
-        <li><a href="mas_tool.html" style="color: black; text-decoration: none;">Korean Master</a></li>
+        <li><a href="mas_tool.html" style="color: black; text-decoration: none;">Stock Analysis Assistant</a></li>
         <li><a href="mas_tool.html" style="color: black; text-decoration: none;">Writing Assistant</a></li>
         <li><a href="mas_tool.html" style="color: black; text-decoration: none;">Gauth Tutor</a></li>
       </ul>
@@ -63,28 +67,32 @@
 
     <!-- MAIN CONTENT FOR THE MAS TOOL DETAIL -->
     <main>
-        <section class="section-block">
-          <div class="section-header">
-            <h2>Korean Master</h2>
-          </div>
-
+      <section class="section-block">
+        <div class="section-header">
+          <h2>Stock Analysis Assistant</h2>
+        </div>
+    
+        <!-- Two Columns Layout -->
+        <div
+          class="tool-detail"
+          style="display: flex; gap: 24px; align-items: flex-start; padding: 16px;"
+        >
+          <!-- left column : video + quick start + button -->
           <div
-            class="tool-detail"
-            style="display: flex; gap: 24px; align-items: flex-start; padding: 16px;"
+            style="flex: 0 0 50%; width: 50%; display: flex; flex-direction: column; gap: 16px;"
           >
-            <!-- Left: 50% width, true 16:9 -->
+            <!-- video container -->
             <div
               class="video-container"
               style="
-                flex: 0 0 50%;
-                width: 50%;
-                aspect-ratio: 16 / 9;
                 position: relative;
+                width: 100%;
+                padding-top: 56.25%; /* 16:9 */
                 overflow: hidden;
               "
             >
               <iframe
-                src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                src="https://www.youtube.com/embed/sQBZyYXalCw"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
                 style="
@@ -97,70 +105,135 @@
                 "
               ></iframe>
             </div>
-
-            <!-- Right: fills remaining ~50% -->
-            <div class="info-container" style="flex: 1;">
-              <h3>Description</h3>
-              <p>
-                Korean Master is an interactive multi-agent language tutor that guides you
-                through Korean vocabulary, grammar drills and conversational practice.
-                It adapts difficulty based on your performance and provides real-time corrections.
-              </p>
-
-              <h3>Model</h3>
-              <p>
-                Built on a fine-tuned GPT-3.5 architecture with a custom dialog tree.
-                Supports both text and audio prompts, with on-the-fly speech-to-text integration.
-              </p>
-
+    
+            <!-- Quick Start -->
+            <div>
               <h3>Quick Start (README)</h3>
               <ul>
-                <li>1. Click “Start Lesson” to launch the first interactive module.</li>
-                <li>2. Use commands like <code>/translate 안녕하세요</code> for instant translations.</li>
-                <li>3. Track progress in your dashboard and review flashcards.</li>
+                <li>1. Click “Try Me” to launch the first interactive module.</li>
+                <li>2. Track progress in your dashboard and review flashcards.</li>
               </ul>
-
-<p style="margin-top: 16px; display: flex; gap: 8px;">
-  <button
-    onclick="location.href='index.html'"
-    style="
-      padding: 8px 16px;
-      border: none;
-      background: var(--accent-color);
-      color: #fff;
-      border-radius: 4px;
-      cursor: pointer;
-    "
-  >
-    ← Back to Marketplace
-  </button>
-
-  <button
-    onclick="location.href='bot.html'"
-    style="
-      padding: 8px 16px;
-      border: none;
-      background: #28a745;
-      color: #fff;
-      border-radius: 4px;
-      cursor: pointer;
-    "
-  >
-    Try me
-  </button>
-</p>
-
+            </div>
+    
+            <!-- button group -->
+            <div style="display: flex; gap: 8px;">
+              <button
+                onclick="location.href='index.html'"
+                style="
+                  padding: 8px 16px;
+                  border: none;
+                  background: var(--accent-color);
+                  color: #fff;
+                  border-radius: 4px;
+                  cursor: pointer;
+                "
+              >
+                ← Back to Marketplace
+              </button>
+    
+              <button
+                onclick="location.href='bot.html'"
+                style="
+                  padding: 8px 16px;
+                  border: none;
+                  background: #28a745;
+                  color: #fff;
+                  border-radius: 4px;
+                  cursor: pointer;
+                "
+              >
+                Try Me
+              </button>
             </div>
           </div>
-        </section>
-
-
+    
+          <!-- right column : description and model module information -->
+          <div class="info-container" style="flex: 1;">
+            <h3>Description</h3>
+            <p>
+              This AI-powered assistant provides quick and insightful stock analysis. Simply input the name or ticker symbol of a stock,
+              and the agent generates a comprehensive report that includes key financial indicators such as:
+            </p>
+            <ul>
+              <li>Price-to-Earnings Ratio (P/E)</li>
+              <li>Market Capitalization</li>
+              <li>Dividend Yield</li>
+              <li>52-Week High/Low</li>
+              <li>Recent Performance Trends</li>
+              <li>Investment Suggestions</li>
+            </ul>
+    
+            <h3>Model</h3>
+            <p>
+              The Stock Analysis Assistant is composed of multiple specialized modules,
+              each leveraging advanced models and tools to deliver reliable stock analysis.
+              Below is a breakdown of each module and its underlying technologies:
+            </p>
+    
+            <ul>
+              <li>
+                <strong>1. Input Parser Module</strong><br />
+                <em>Function:</em> Interprets user input (e.g., stock name, ticker symbol).<br />
+                <em>Models/Tools:</em>
+                <ul>
+                  <li>Named Entity Recognition using <code>DistilBERT</code> fine-tuned on financial data.</li>
+                  <li>Regex-based fallback parsing for ticker formats.</li>
+                </ul>
+              </li>
+    
+              <li>
+                <strong>2. Data Retrieval Module</strong><br />
+                <em>Function:</em> Fetches real-time and historical stock data.<br />
+                <em>Tools/APIs:</em>
+                <ul>
+                  <li><code>Yahoo Finance API</code>, <code>Alpha Vantage</code>, or <code>IEX Cloud</code>.</li>
+                  <li>Efficient HTTP clients with caching mechanisms.</li>
+                </ul>
+              </li>
+    
+              <li>
+                <strong>3. Data Processing Module</strong><br />
+                <em>Function:</em> Cleans and transforms raw data into a structured format.<br />
+                <em>Tools:</em>
+                <ul>
+                  <li><code>Pandas</code> and <code>NumPy</code> for data manipulation.</li>
+                  <li>Outlier handling and normalization techniques.</li>
+                </ul>
+              </li>
+    
+              <li>
+                <strong>4. Analysis Module</strong><br />
+                <em>Function:</em> Calculates financial indicators and trends.<br />
+                <em>Models/Tools:</em>
+                <ul>
+                  <li>Rule-based computation for <code>P/E ratio</code>, <code>market cap</code>, etc.</li>
+                  <li><code>ARIMA</code> or <code>Prophet</code> for time series forecasting.</li>
+                  <li>Risk metrics using <code>VaR</code> and <code>standard deviation</code>.</li>
+                </ul>
+              </li>
+    
+              <li>
+                <strong>5. Reporting Module</strong><br />
+                <em>Function:</em> Converts analysis results into natural language.<br />
+                <em>Models:</em>
+                <ul>
+                  <li><code>GPT-4</code> or fine-tuned <code>T5/BART</code> on financial data.</li>
+                  <li>Prompt engineering for consistency and tone (e.g., bullish/bearish).</li>
+                </ul>
+              </li>
+    
+              <li>
+                <strong>6. User Interface Module</strong><br />
+                <em>Function:</em> Provides a clean, interactive front-end for users.<br />
+                <em>Tools:</em>
+                <ul>
+                  <li><code>React.js</code> or <code>Vue.js</code> for dynamic rendering.</li>
+                  <li><code>Plotly</code> or <code>D3.js</code> for stock visualizations.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
-
-    <!-- FOOTER (identical to index.html) -->
-    <footer></footer>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    

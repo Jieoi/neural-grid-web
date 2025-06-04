@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AI Agent Marketplace - Korean Master Chat</title>
+  <title>AI Agent Marketplace - Stock Analysis Assistant</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <style>
@@ -91,8 +91,12 @@
     <header>
       <button id="menu-toggle" aria-label="Toggle menu">☰</button>
       <div class="logo">
-        <img src="image/logo3.JPG" alt="Logo">
-        <img src="image/logo4.JPG" alt="Logo">
+        <a href="index.html">
+          <img src="image/logo3.JPG" alt="Logo">
+        </a>
+        <a href="index.html">
+          <img src="image/logo4.JPG" alt="Logo">
+        </a>
       </div>
       <nav>COMMUNITY & SUPPORT | ABOUT US</nav>
       <div class="controls">
@@ -109,7 +113,7 @@
     <aside>
       <h3>Recently Used 📑</h3>
       <ul>
-        <li><a href="mas_tool.html">Korean Master</a></li>
+        <li><a href="mas_tool.html">Stock Analysis Assistant</a></li>
         <li><a href="mas_tool.html">Writing Assistant</a></li>
         <li><a href="mas_tool.html">Gauth Tutor</a></li>
       </ul>
@@ -134,7 +138,7 @@
       </ul>
     </aside>
 
-    <!-- CHAT CONTENT -->
+    <!-- CHAT CONTENT
     <main class="chat-main">
       <div class="chat-container">
         <div class="message assistant">안녕하세요! 저는 Korean Master입니다. 무엇을 도와드릴까요?</div>
@@ -152,7 +156,121 @@
         <textarea rows="2" placeholder="Type your message or select a tool..."></textarea>
         <button>Send</button>
       </div>
+    </main> -->
+
+    <!-- STOCK ANALYSIS ASSISTANT CHAT -->
+    <main class="chat-main">
+      <div class="chat-container">
+    
+        <!-- Left Panel -->
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
+          <!-- Stock Input -->
+          <div class="chat-input" style="display: flex; gap: 8px;">
+            <input
+              type="text"
+              id="stock-input"
+              placeholder="Enter a stock name or ticker symbol..."
+              style="flex: 1; padding: 8px; border-radius: 4px; border: 1px solid #ccc;"
+            />
+            <button onclick="analyzeStock()" style="padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px;">Analyze</button>
+          </div>
+    
+          <!-- Stock Metrics -->
+          <div class="message assistant" id="stock-result">
+            Please enter a stock name or symbol and click Analyze.
+          </div>
+    
+          <!-- Investment Suggestion -->
+          <div class="message assistant" id="investment-suggestion" style="background: #f5f5f5;">
+            <!-- Investment advice will appear here -->
+          </div>
+    
+          <!-- PDF Download -->
+          <div style="display: flex; gap: 8px;">
+            <button onclick="generatePDF()" style="padding: 8px 16px; background: #28a745; color: white; border: none; border-radius: 4px;">
+              📄 Download Report PDF
+            </button>
+          </div>
+    
+          <!-- Candlestick Chart (TradingView for Apple) -->
+          <div class="tradingview-widget-container" style="margin-top: 16px;">
+            <div id="tradingview_apple"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+              new TradingView.widget({
+                "width": "100%",
+                "height": 400,
+                "symbol": "NASDAQ:AAPL",
+                "interval": "W",
+                "timezone": "Etc/UTC",
+                "theme": "light",
+                "style": "1",
+                "locale": "en",
+                "toolbar_bg": "#f1f3f6",
+                "enable_publishing": false,
+                "hide_top_toolbar": true,
+                "hide_legend": false,
+                "save_image": false,
+                "container_id": "tradingview_apple"
+              });
+            </script>
+          </div>
+        </div>
+    
+        <!-- Right Panel -->
+        <div style="flex: 1;">
+          <h3>Key Financial Indicators Explained</h3>
+          <ul>
+            <li><strong>P/E Ratio:</strong> Measures valuation based on earnings.</li>
+            <li><strong>Market Capitalization:</strong> Total market value of a company's shares.</li>
+            <li><strong>Dividend Yield:</strong> Annual dividend as a % of price.</li>
+            <li><strong>52-Week High/Low:</strong> Price extremes in the last year.</li>
+            <li><strong>Recent Performance Trends:</strong> Price movement and momentum.</li>
+            <li><strong>Investment Suggestions:</strong> AI-generated decision advice.</li>
+          </ul>
+        </div>
+      </div>
     </main>
+    
+    <!-- Basic Script -->
+    <script>
+      function analyzeStock() {
+        const stock = document.getElementById("stock-input").value.trim();
+        const resultDiv = document.getElementById("stock-result");
+        const adviceDiv = document.getElementById("investment-suggestion");
+    
+        if (!stock) {
+          resultDiv.textContent = "Please enter a valid stock name or ticker symbol.";
+          return;
+        }
+    
+        // Mock data
+        resultDiv.innerHTML = `
+    🔍 <strong>Analysis for:</strong> ${stock.toUpperCase()}
+    
+    <li> 📈 <strong>P/E Ratio:</strong> 25.4</li>
+    <li> 💰 <strong>Market Cap:</strong> $1.5 Trillion</li>
+    <li> 💵 <strong>Dividend Yield:</strong> 1.2%</li>
+    <li> 📊 <strong>52-Week High/Low:</strong> $256 / $130</li>
+    <li> 🔄 <strong>Recent Trend:</strong> Sideways to slightly bearish, with low volatility and limited upward momentum.</li>
+        `;
+    
+        adviceDiv.innerHTML = `
+    💡 <strong>Investment Suggestion:</strong><br>
+    <li>The stock appears to be in a consolidation phase, with weak short-term momentum.</li>
+    <li>Consider holding if you're a long-term investor, but avoid initiating new positions until signs of a clear uptrend emerge.</li>
+    <li>Buying may be more favorable if the price tests support levels and shows a rebound.</li>
+        `;
+      }
+    
+      function generatePDF() {
+        alert("PDF generation feature coming soon!");
+      }
+    </script>
+</script>
+
+
+
 
     <!-- FOOTER -->
     <footer></footer>
